@@ -2,6 +2,14 @@
 <div><span>id: </span>{{hero.id}}</div>
 <div><span>name: </span>{{hero.name}}</div>
 
+<!-- Two way Binding -->
+<div>
+  <label>name:
+    <input [(ngModel)]="hero.name" placeholder="name">
+  </label>
+</div>
+
+<!-- property binding -->
 <div>
   <button [disabled]="isSpecial">propery binding button</button>
 </div>
@@ -19,9 +27,9 @@
   <button (click)="onSave($event)">event binding save button</button>
 </div>
 
-<!-- Two way Binding -->
-<div>
-  <label>name:
-    <input [(ngModel)]="hero.name" placeholder="name">
-  </label>
-</div>
+<h2>My Heroes</h2>
+<ul>
+  <li *ngFor="let hero of heroes">
+    <span>{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
